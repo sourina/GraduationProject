@@ -1,0 +1,53 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Litter Watch | About Us</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <link href="style.css" rel="stylesheet" type="text/css" />
+
+</head>
+<body id="page2">
+<div id="main">
+  <!-- header -->
+  <div id="header">
+    <ul class="site-nav">
+      <li><a href="/" class="act">Home</a></li>
+      <li><a href="/about-us">About Us</a></li>
+      <li><a href="/articles">Articles</a></li>
+      <li th:if="${client eq null}"><a href="/signup">Sign up</a></li>
+      <li th:if="${client eq null}"><a href="/login">Log in</a></li>
+      <li th:if="${client ne null}"><a href="/logout">Log out</a></li>
+    </ul>
+
+  </div>
+
+  <div class="logo"><a href="#"><img src="aboutus.png" height="500px" width="1000px" alt="" /></a></div>
+  <!-- content -->
+  <div id="content">
+    <div class="indent1">
+      <div class="indent">
+        <h2>About Us</h2>
+        <p>Litter Watch was launched in October 2022 as an initiative by the graduating class of AW Academy's Java program. We believe that proper handling of trash and waste is paramount for an anviromentally concious world...</p>
+      </div>
+      <h2>Our Team</h2>
+      <ul class="list1">
+        <li><img src="Sourina.png" height="70px" width="70px"alt="" /><a href="#">Sourina</a><br />
+          Sourina has a Bachelor's degree in Geography and has worked as a HR for 4 years.</li>
+        <li><img src="Shruthi1.jpg"height="70px" width="70px" alt="" /><a href="#">Shruthi</a><br />
+          Shruthi has a bachelor's in Electronics and Communication Engineering and worked as a Digital Marketing Executive for 3 years...</li>
+        <li><img src="omprakash.png"height="70px" width="70px" alt="" /><a href="#">Omprakash</a><br />
+          Omprakash has a bachelor's degree in Electronics and communication engineering. He has been working in Sweden for 10 years in a logistic company....</li>
+        <li><img src="Beniam.png"height="70px" width="70px" alt="" /><a href="#">Beniam</a><br />
+          Beniam has a bachelor's degree in Management. He has been working in sales and marketing for over 12 years...</li>
+      </ul>
+    </div>
+  </div>
+  <!-- footer -->
+  <div id="footer">
+    <div class="indent">
+      <div class="fleft">Copyright - Litter Watch 2022</div>
+      </div>
+  </div>
+</div>
+</body>
+</html>

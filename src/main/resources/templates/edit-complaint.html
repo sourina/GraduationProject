@@ -1,0 +1,63 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>Litter Watch | Show Complaint</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link href="style.css" rel="stylesheet" type="text/css" />
+
+</head>
+<body id="page6">
+<div id="main">
+    <!-- header -->
+    <div id="header">
+        <ul class="site-nav">
+            <li><a href="/" class="act">Home</a></li>
+            <li><a href="/about-us">About Us</a></li>
+            <li><a href="/articles">Articles</a></li>
+            <!--
+                        <li><a href="/complaint-page">Complaint Form</a></li>
+            -->
+            <li th:if="${client eq null}"><a href="/signup">Sign up</a></li>
+            <li th:if="${client eq null}"><a href="/login">Log in</a></li>
+            <li th:if="${client ne null}"><a href="/logout">Log out</a></li>
+
+        </ul>
+
+    </div>
+
+    <div class="logo"><a href="#"><img src="homepage.jpg" height="500px" width="1000px" alt="" /></a></div>
+    <!-- content -->
+    <div id="content">
+        <div class="indent1">
+            <h2>Your reported issue details</h2>
+            <h3>
+                <div th:if="${complaint ne null}">
+
+                    Location: <span th:text="${complaint.place}"></span>
+                    <br/>
+                    Description: <span th:text="${complaint.description}"></span>
+                    <br/>
+                    Registered Date: <span th:text="${complaint.formattedDateTime}"></span>
+                    <br/>
+                    Status: <span th:text="${complaint.status}"></span>
+                    <br/>
+                </div>
+                <div th:if="${client ne null && client.admin eq true}">
+                    <form action="#" th:action="@{/confirm-page}" method="post">
+                        <input type="hidden" th:field="${complaint.id}"/>
+                        Change Status
+                        <select class="form-control" name="selectedStatus">
+                            <option value="0">select option</option>
+                            <option th:each="option : ${statusOptions}" th:value="${option}" th:text="${option}"></option>
+                        </select>
+                        <input type="submit" value="submit">
+                    </form>
+                </div>
+
+                <div th:if="${complaint eq null}">No entry found </div>
+            </h3>
+        </div>
+    </div>
+</div>
+</body>
+</html>

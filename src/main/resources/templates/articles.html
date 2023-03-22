@@ -1,0 +1,57 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Litter Watch | Articles</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <link href="style.css" rel="stylesheet" type="text/css" />
+
+</head>
+<body id="page3">
+<div id="main">
+  <!-- header -->
+  <div id="header">
+    <ul class="site-nav">
+      <li><a href="/" class="act">Home</a></li>
+      <li><a href="/about-us">About Us</a></li>
+      <li><a href="/articles">Articles</a></li>
+      <li th:if="${client eq null}"><a href="/signup">Sign up</a></li>
+      <li th:if="${client eq null}"><a href="/login">Log in</a></li>
+      <li th:if="${client ne null}"><a href="/logout">Log out</a></li>
+    </ul>
+
+  </div>
+
+  <div class="logo"><a href="#"><img src="articles1.jpg" height="500px" width="1000px" alt="" /></a></div>
+  <!-- content -->
+  <div id="content">
+    <div class="indent1">
+      <h2>Articles</h2>
+      <ul class="list1">
+        <li><img src="image7.jpg" height="200px" width="200px" alt="" />
+          <div class="zoom"><a href="article.html">Article 1</a><br />
+
+            How to sell, recycle, or (safely) throw away your stuff in Sweden
+
+          </div>
+        </li>
+        <li><img src="image5.jpg" height="200px" width="200px" alt="" />
+          <div class="zoom"><a href="#">Article 2</a><br />
+            Envac Adds Self-Emptying Litter Bin to Gothenburgs Underground Waste Collection System
+          </div>
+        </li>
+        <li><img src="image2.jpg" height="200px" width="200px" alt="" />
+          <div class="zoom"><a href="#">Article 3</a><br />
+            Article 3 description is to be here...</div>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <!-- footer -->
+  <div id="footer">
+    <div class="indent">
+      <div class="fleft">Copyright - Litter Watch 2022</div>
+    </div>
+  </div>
+</div>
+</body>
+</html>
